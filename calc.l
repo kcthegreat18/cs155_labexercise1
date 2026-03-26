@@ -5,7 +5,7 @@
 %%
 [ \t\n]+ { /* skip whitespace */ }
 "#".*    {/* skip line */}
-[\+\-]{0,1}[0-9]+\.[0-9]*|[\+\-]{0,1}[0-9]*\.[0-9]+ {yylval.fval= atof(yytext); return FNUM;}
+[0-9]+\.[0-9]*|[0-9]*\.[0-9]+ { yylval.fval= atof(yytext); return FNUM;}
 [0-9]+ { yylval.ival = atoi(yytext); return NUM; }
 "+" { return PLUS; }
 "-" { return MINUS; }
@@ -13,6 +13,7 @@
 "/" { return DIVIDE; }
 "(" { return LPAREN; }
 ")" { return RPAREN; }
+"^" {return EXPO;}
 . { fprintf(stderr, "Unknown character: %s\n", yytext); }
 %%
 int yywrap(void) { return 1; }

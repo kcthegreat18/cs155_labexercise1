@@ -47,7 +47,8 @@
      DIVIDE = 263,
      LPAREN = 264,
      RPAREN = 265,
-     UMINUS = 266
+     EXPO = 266,
+     UMINUS = 267
    };
 #endif
 
@@ -58,7 +59,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 9 "calc.y"
+#line 10 "calc.y"
 
     int ival;
     double fval;
@@ -66,7 +67,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 70 "calc.tab.h"
+#line 71 "calc.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 void yyerror(const char *msg);
 int yylex(void);
@@ -13,11 +14,12 @@ int yylex(void);
 
 %token <ival> NUM
 %token <fval> FNUM
-%token PLUS MINUS TIMES DIVIDE LPAREN RPAREN
+%token PLUS MINUS TIMES DIVIDE LPAREN RPAREN EXPO
 
 %left PLUS MINUS
 %left TIMES DIVIDE
 %right UMINUS
+%right EXPO                         
 
 %type <fval> expr term factor
 
@@ -34,6 +36,7 @@ expr:
     expr PLUS term { $$ = $1 + $3; }
     | expr MINUS term { $$ = $1 - $3; }
     | term { $$ = $1; }
+    | expr EXPO expr {$$ = pow($1, $3);}
     ;
 
 term:
