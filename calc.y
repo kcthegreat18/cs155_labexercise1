@@ -4,6 +4,11 @@
 #include <math.h>
 #include <string.h>
 
+//Abriol, Keanu Christopher F
+//2021-04256
+//CS 155 HDE FVW
+// Mar 27, 2026
+
 void yyerror(const char *msg);
 int yylex(void);
 
