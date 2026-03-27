@@ -5,7 +5,7 @@
 %%
 [ \t\n]+ { /* skip whitespace */ }
 "#".*    {/* skip line */}
-[0-9]+\.[0-9]*|[0-9]*\.[0-9]+ { yylval.fval= atof(yytext); return FNUM;}
+[0-9]+\.[0-9]*|[0-9]*\.[0-9]+ { yylval.fval= atof(yytext); return FNUM; /* return float number */ }
 [0-9]+ { yylval.ival = atoi(yytext); return NUM; }
 "+" { return PLUS; }
 "-" { return MINUS; }

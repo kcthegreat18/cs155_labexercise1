@@ -624,7 +624,7 @@ YY_RULE_SETUP
 case 3:
 YY_RULE_SETUP
 #line 8 "calc.l"
-{ yylval.fval= atof(yytext); return FNUM;}
+{ yylval.fval= atof(yytext); return FNUM; /* return float number */ }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP

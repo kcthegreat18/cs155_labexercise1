@@ -75,6 +75,11 @@
 #include <math.h>
 #include <string.h>
 
+//Abriol, Keanu Christopher F
+//2021-04256
+//CS 155 HDE FVW
+// Mar 27, 2026
+
 void yyerror(const char *msg);
 int yylex(void);
 
@@ -131,7 +136,7 @@ void print_tree(Node *root, int d) {
 
 
 /* Line 189 of yacc.c  */
-#line 135 "calc.tab.c"
+#line 140 "calc.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -154,14 +159,14 @@ void print_tree(Node *root, int d) {
 /* "%code requires" blocks.  */
 
 /* Line 209 of yacc.c  */
-#line 62 "calc.y"
+#line 67 "calc.y"
 
     typedef struct node Node;
 
 
 
 /* Line 209 of yacc.c  */
-#line 165 "calc.tab.c"
+#line 170 "calc.tab.c"
 
 /* Tokens.  */
 #ifndef YYTOKENTYPE
@@ -189,7 +194,7 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 67 "calc.y"
+#line 72 "calc.y"
 
     int ival;
     double fval;
@@ -198,7 +203,7 @@ typedef union YYSTYPE
 
 
 /* Line 214 of yacc.c  */
-#line 202 "calc.tab.c"
+#line 207 "calc.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -210,7 +215,7 @@ typedef union YYSTYPE
 
 
 /* Line 264 of yacc.c  */
-#line 214 "calc.tab.c"
+#line 219 "calc.tab.c"
 
 #ifdef short
 # undef short
@@ -496,8 +501,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    89,    89,    97,   101,   105,   109,   115,   118,   121,
-     127,   133,   138,   141
+       0,    94,    94,   102,   106,   110,   114,   120,   123,   126,
+     132,   138,   143,   146
 };
 #endif
 
@@ -1407,7 +1412,7 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 90 "calc.y"
+#line 95 "calc.y"
     {
         print_tree((yyvsp[(1) - (1)].node), 0);
     ;}
@@ -1416,43 +1421,43 @@ yyreduce:
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 97 "calc.y"
+#line 102 "calc.y"
     { //$$ = $1 + $3; 
-    (yyval.node)=makeNode("expr", (yyvsp[(1) - (3)].node), makeNode("+", NULL, NULL, NULL), (yyvsp[(3) - (3)].node)); // Create a node with the operator as label
+    (yyval.node)=makeNode("expr", (yyvsp[(1) - (3)].node), makeNode("+", NULL, NULL, NULL), (yyvsp[(3) - (3)].node)); 
     ;}
     break;
 
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 101 "calc.y"
+#line 106 "calc.y"
     { //$$ = $1 - $3; 
-    (yyval.node)=makeNode("expr", (yyvsp[(1) - (3)].node), makeNode("-", NULL, NULL, NULL), (yyvsp[(3) - (3)].node)); // Create a node with the operator as label
+    (yyval.node)=makeNode("expr", (yyvsp[(1) - (3)].node), makeNode("-", NULL, NULL, NULL), (yyvsp[(3) - (3)].node)); 
     ;}
     break;
 
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 105 "calc.y"
+#line 110 "calc.y"
     { //$$ = $1; 
-    (yyval.node)=makeNode("expr", (yyvsp[(1) - (1)].node), NULL, NULL); // Create a node with the term as label
+    (yyval.node)=makeNode("expr", (yyvsp[(1) - (1)].node), NULL, NULL); 
     ;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 109 "calc.y"
+#line 114 "calc.y"
     { //$$ = pow($1, $3);
-    (yyval.node)=makeNode("expr", (yyvsp[(1) - (3)].node), makeNode("**", NULL, NULL, NULL), (yyvsp[(3) - (3)].node)); // Create a node with the operator as label
+    (yyval.node)=makeNode("expr", (yyvsp[(1) - (3)].node), makeNode("**", NULL, NULL, NULL), (yyvsp[(3) - (3)].node)); 
     ;}
     break;
 
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 115 "calc.y"
+#line 120 "calc.y"
     { //$$ = $1 * $3;
         (yyval.node)=makeNode("term", (yyvsp[(1) - (3)].node), makeNode("*", NULL, NULL, NULL), (yyvsp[(3) - (3)].node)); // Create a node with the operator as label
      ;}
@@ -1461,29 +1466,29 @@ yyreduce:
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 118 "calc.y"
+#line 123 "calc.y"
     { //$$ = $1 / $3;
-        (yyval.node)=makeNode("term", (yyvsp[(1) - (3)].node), makeNode("/", NULL, NULL, NULL), (yyvsp[(3) - (3)].node)); // Create a node with the operator as label
+        (yyval.node)=makeNode("term", (yyvsp[(1) - (3)].node), makeNode("/", NULL, NULL, NULL), (yyvsp[(3) - (3)].node)); 
      ;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 121 "calc.y"
+#line 126 "calc.y"
     { //$$ = $1;
-        (yyval.node) = makeNode("term", (yyvsp[(1) - (1)].node), NULL, NULL); // Create a node with the factor as label
+        (yyval.node) = makeNode("term", (yyvsp[(1) - (1)].node), NULL, NULL); 
      ;}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 127 "calc.y"
+#line 132 "calc.y"
     { 
         char buffer[26];
         snprintf(buffer, sizeof(buffer), "%d", (yyvsp[(1) - (1)].ival)); // Convert integer to string 
-        (yyval.node) = makeNode("factor", makeNode(buffer, NULL, NULL, NULL), NULL, NULL); // Create a node with the number as label
+        (yyval.node) = makeNode("factor", makeNode(buffer, NULL, NULL, NULL), NULL, NULL); 
                 
     ;}
     break;
@@ -1491,29 +1496,29 @@ yyreduce:
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 133 "calc.y"
+#line 138 "calc.y"
     { 
         char buffer[26];
         snprintf(buffer, sizeof(buffer), "%f", (yyvsp[(1) - (1)].fval)); // Convert float to string 
-        (yyval.node) = makeNode("factor", makeNode(buffer, NULL, NULL, NULL), NULL, NULL); // Create a node with the number as label
+        (yyval.node) = makeNode("factor", makeNode(buffer, NULL, NULL, NULL), NULL, NULL); 
     ;}
     break;
 
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 138 "calc.y"
+#line 143 "calc.y"
     { 
-        (yyval.node) = makeNode("factor", makeNode("(", NULL, NULL, NULL), (yyvsp[(2) - (3)].node), makeNode(")", NULL, NULL, NULL)); // Create a node with the expression as label
+        (yyval.node) = makeNode("factor", makeNode("(", NULL, NULL, NULL), (yyvsp[(2) - (3)].node), makeNode(")", NULL, NULL, NULL)); 
     ;}
     break;
 
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 141 "calc.y"
+#line 146 "calc.y"
     { 
-         (yyval.node) = makeNode("factor", makeNode("-", NULL, NULL, NULL), (yyvsp[(2) - (2)].node), NULL); // Create a node with the expression as label
+         (yyval.node) = makeNode("factor", makeNode("-", NULL, NULL, NULL), (yyvsp[(2) - (2)].node), NULL); 
         
         ;}
     break;
@@ -1521,7 +1526,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 1525 "calc.tab.c"
+#line 1530 "calc.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1733,7 +1738,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 146 "calc.y"
+#line 151 "calc.y"
 
 
 void yyerror(const char *msg) {

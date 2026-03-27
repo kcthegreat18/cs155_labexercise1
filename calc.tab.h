@@ -35,7 +35,7 @@
 /* "%code requires" blocks.  */
 
 /* Line 1676 of yacc.c  */
-#line 62 "calc.y"
+#line 67 "calc.y"
 
     typedef struct node Node;
 
@@ -70,7 +70,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 67 "calc.y"
+#line 72 "calc.y"
 
     int ival;
     double fval;
